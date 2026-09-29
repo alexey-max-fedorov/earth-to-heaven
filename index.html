@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Earth to Heaven LLC</title>
+<style>
+  :root {
+    --bg-top: #05070f;
+    --bg-bottom: #1a1206;
+    --gold: #d9b56a;
+    --gold-soft: #f2dfae;
+    --text: #f4efe4;
+    --muted: #9a927f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--text);
+    background: linear-gradient(to bottom, var(--bg-top) 0%, #0d0f1c 45%, var(--bg-bottom) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    overflow-x: hidden;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: -20vh; left: 50%;
+    width: 80vw; height: 60vh;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(217,181,106,0.22), transparent 65%);
+    pointer-events: none;
+  }
+  main {
+    position: relative;
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
+  }
+  .tag {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-weight: 400;
+    font-size: clamp(2.6rem, 8vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .rule {
+    width: 64px; height: 1px;
+    background: var(--gold);
+    margin: 36px auto;
+    opacity: 0.7;
+  }
+  .brands-label {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .brand {
+    display: inline-block;
+    padding: 18px 36px;
+    border: 1px solid rgba(217,181,106,0.45);
+    border-radius: 999px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+    transition: all 0.25s ease;
+    background: rgba(217,181,106,0.05);
+  }
+  .brand:hover {
+    background: var(--gold);
+    color: #14100a;
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(217,181,106,0.25);
+  }
+  .brand small {
+    display: block;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    opacity: 0.65;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+  <main>
+    <svg class="logo" width="96" height="96" viewBox="0 0 96 96" style="display:block;margin:0 auto 24px;" role="img" aria-label="Earth and cloud logo">
+      <circle cx="48" cy="60" r="26" fill="#1f5fa8" stroke="#d9b56a" stroke-width="1.5"/>
+      <path d="M36 52 q6 -9 13 -3 q5 6 -2 11 q-9 3 -11 -8z" fill="#4a9d5b"/>
+      <path d="M56 64 q9 -5 13 4 q0 9 -8 9 q-7 -4 -5 -13z" fill="#4a9d5b"/>
+      <g fill="#f4efe4" opacity="0.95">
+        <circle cx="36" cy="34" r="10"/>
+        <circle cx="50" cy="27" r="13"/>
+        <circle cx="65" cy="35" r="9"/>
+        <rect x="30" y="34" width="41" height="11" rx="5.5"/>
+      </g>
+    </svg>
+    <h1>Earth to Heaven LLC</h1>
+    <div class="rule"></div>
+    <div class="brands-label">Brands</div>
+    <a class="brand" href="https://headliner.studio" target="_blank" rel="noopener">
+      Headliner Studios
+      <small>headliner.studio</small>
+    </a>
+  </main>
+</body>
+</html>
