@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/cormorant-garamond-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/eb-garamond-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/eb-garamond-400-italic.woff2") format("woff2");
+}
+
+:root {
+  --ink: #071018;
+  --moon: #e7eef6;
+  --mist: #b7c3d2;
+  --line: rgba(186, 214, 230, 0.42);
+  --accent: #8fd4ee;
+  --glass: rgba(6, 14, 24, 0.42);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--moon);
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  background: var(--ink);
+}
+
+::selection {
+  background: rgba(143, 212, 238, 0.35);
+  color: #fff;
+}
+
+a { color: inherit; }
+
+.sky,
+.veil {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sky {
+  background:
+    url("/assets/hero-night.jpg") center / cover no-repeat;
+}
+
+.veil {
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(7, 14, 24, 0.28) 0%, rgba(7, 14, 24, 0.5) 46%, rgba(5, 10, 18, 0.78) 100%),
+    linear-gradient(to top, rgba(5, 10, 18, 0.82) 0%, rgba(5, 10, 18, 0.15) 32%, rgba(5, 10, 18, 0.35) 100%);
+}
+
+.frame {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px 22px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 22px;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
+}
+
+.kicker {
+  margin: 0 0 14px;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(3.4rem, 11vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.rule {
+  width: 72px;
+  height: 1px;
+  margin: 28px auto;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.lede {
+  margin: 0 0 28px;
+  max-width: 28rem;
+  color: var(--mist);
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  font-style: italic;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 220px;
+  padding: 16px 34px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--glass);
+  color: var(--moon);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.brand strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.65rem;
+  letter-spacing: 0.03em;
+}
+
+.brand span {
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.brand:hover {
+  border-color: var(--accent);
+  background: rgba(143, 212, 238, 0.12);
+  transform: translateY(-2px);
+}
+
+.brand:focus-visible,
+.foot a:focus-visible,
+.text a:focus-visible,
+.home-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 18px;
+  margin: 0;
+  padding-top: 28px;
+  color: var(--mist);
+  font-size: 1rem;
+}
+
+.foot p { margin: 0; }
+
+.foot a {
+  color: var(--moon);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.foot a:hover { border-bottom-color: var(--accent); }
+
+.sheet {
+  width: min(40rem, 100%);
+  text-align: left;
+  padding: 36px 40px 28px;
+  border: 1px solid rgba(186, 214, 230, 0.18);
+  border-radius: 22px;
+  background: rgba(6, 12, 20, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.sheet h1 {
+  font-size: clamp(3rem, 8vw, 4.6rem);
+  text-align: left;
+}
+
+.sheet .rule {
+  margin: 22px 0 22px;
+}
+
+.text p {
+  margin: 0 0 1rem;
+  color: var(--moon);
+  font-size: 1.2rem;
+}
+
+.text p.quiet {
+  color: #d5deea;
+  font-style: italic;
+}
+
+.text a {
+  color: var(--accent);
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1;
+  color: var(--moon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+.home-link:hover { color: var(--accent); }
+
+.miss {
+  margin: 0 0 18px;
+  color: var(--mist);
+  font-style: italic;
+  font-size: 1.35rem;
+}
+
+@media (max-width: 640px) {
+  .frame { padding: 22px 18px 16px; }
+  .sheet { padding: 28px 22px 20px; }
+  .foot {
+    gap: 8px 16px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main {
+    animation: rise 0.7s ease both;
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
